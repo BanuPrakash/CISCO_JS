@@ -343,3 +343,23 @@ Promise is a ES6/ES2015 feature --> not available in ES5 engine
 https://github.com/zloirock/core-js
 
 ```
+
+Webpack:
+```
+npm run dev
+
+
+asset bundle.js 6.47 KiB [emitted] (name: main)
+runtime modules 695 bytes 3 modules
+cacheable modules 1.6 KiB
+  ./src/index.js 801 bytes [built] [code generated]
+  ./src/lib.js 583 bytes [built] [code generated]
+  ./src/Person.js 252 bytes [built] [code generated]
+webpack 5.96.1 compiled successfully in 53 ms
+
+npm run prod
+asset bundle.js 693 bytes [emitted] [minimized] (name: main)
+orphan modules 835 bytes [orphan] 2 modules
+./src/index.js + 2 modules 1.6 KiB [built] [code generated]
+webpack 5.96.1 compiled successfully in 149 ms
+```
