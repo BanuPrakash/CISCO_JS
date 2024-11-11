@@ -382,5 +382,19 @@ npm i webpack-dev-server
 npm start
 
 =======
+JSX : JavaScript and XML
 
+@babel/preset-env --> ES2015+ to lower version
+@babel/preset-react --> JSX to JS
 
+Handling JSX:
+npm i @babel/preset-react
+
+babel.config.js
+```
+module.exports = {
+    "presets": ["@babel/preset-env", "@babel/preset-react"]
+}
+```
+
+{product.name} is called as interpolation {data to presentation}

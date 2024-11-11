@@ -1,5 +1,5 @@
-import filter, {add, map} from './lib'; // ESM 
-import Person from './Person' 
+import filter, { add, map } from './lib'; // ESM 
+import Person from './Person'
 
 Promise.resolve('Hello, World');
 
@@ -23,3 +23,42 @@ let mobiles = filter(products, product => product.category === 'mobile');
 mobiles.forEach(function (product) {
     console.log(product.name);
 });
+
+console.log('--------------');
+
+let React = {
+    createElement: (tag, props, ...children) => {
+        var element = { tag, props: { ...props, children } };
+        return element;
+    }
+};
+
+let product = products[0];
+
+// JSX
+let ProductCard = <div className='card'>
+    <h2>{product.name}</h2>
+    <p>Price: Rs. {product.price}</p>
+</div>
+
+
+console.log(ProductCard); // JSX to JS
+
+// simulating the render function for web
+function render(element, container) {
+    let domElement = document.createElement(element.tag); //div
+    if (['string', 'number'].includes(typeof element)) {
+        container.appendChild(document.createTextNode(String(element)));
+        return
+    }
+
+    if (element.props.children) {
+        element.props.children.forEach(child => {
+            render(child, domElement);
+        });
+    }
+    container.appendChild(domElement); //div
+}
+
+let root = document.getElementById('root');
+render(ProductCard, root);
