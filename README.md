@@ -169,5 +169,75 @@ Event loop: like an infinite while(true) loop
 3) empty macro task queue
 4) wait
 
+===========================
 
+Why NodeJS?
+* build APIs
+* realtime application
+* for streaming
+* developing web applications
 
+Developing web applications?
+1) we might write code in Latest version of JS/ TypeScript / Dart / CoffeeScript/LiveScript
+
+JS is dynamically typed language
+let a = "hello"; //string
+a = 10; // number
+
+TypeScript: --> statically typed language
+let name:string = "Raj";
+name = 10; // tsc error
+
+tsc products.ts --> products.js --> engine for execution
+
+Transcompiler
+latest JS 2015 [ES6] --> babel/tracuer --> compatable JS version of target ES5
+
+2) Linting : static code analysis
+3) Unit testing, E2E testing
+4) Minify and uglify your code
+5) bundle the code
+
+```
+index.html
+
+<script src="products.js"></script>
+<script src="customers.js"></script>
+<script src="orders.js"></script>
+<script src="payments.js"></script>
+```
+Issues: 1) too many network calls
+2) order matters
+
+Solution:
+```
+<script src="bundle.js"></script>
+```
+
+Understanding of NodeJS project.
+1) package.json file where dependencies are configured, scripts are written
+2) node_modules folder where dependencies are downloaded into
+3) uses CommonJS Module system
+
+Other module systems available: IIFE, CommonJS , System , AMD, ESM (ES6 Module system)
+
+npm init --y
+
+node package managers:
+1) npm <<default>>
+2) yarn
+3) pnpm
+4) rush
+5) lerna
+
+* downloading dependecies
+* publish libraries
+* run scripts
+
+npm i lodash
+
+ "lodash": "4.17.21" --> exact version
+ "lodash": "^4.17.21" --> 4+
+ "lodash": "~4.17.21" --> major version has to be 4, minor and patch can change
+
+ 
