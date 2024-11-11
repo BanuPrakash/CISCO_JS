@@ -278,3 +278,68 @@ let fiveAdder = adder(5);
 fiveAdder(2); // 5 + 2
 
 closure: function returned from outer function can access all the members of outer function
+
+====================
+
+JS build tools:
+1) Grunt
+2) gulp
+3) Webpack <<default for Angular / React >>
+4) Vite
+
+Grunt is a JavaScript task runner, a tool used to automatically perform frequent tasks such as minification, compilation, unit testing, and linting.
+```
+product.ts
+tsc product.ts --> product.js
+
+customer.ts
+tsc customer.ts --> customer.js
+```
+
+steps for webpack:
+webpack-example %  npm init --y
+webpack-example %  npm i webpack webpack-cli html-webpack-plugin babel-loader @babel/core @babel/preset-env 
+
+Babel is a free and open-source JavaScript transcompiler that is mainly used to convert ECMAScript 2015+ (ES6+) code into backwards-compatible JavaScript code that can be run by older JavaScript engines.
+https://caniuse.com/
+
+* babel-loader
+allows to use ES6 module system instead of CommonJS module system
+```
+import {filter, map} from './lib'; // ESM
+instead of
+let {filter, map} = require('./lib'); // CommonJS
+```
+
+* file-loader
+import 'logo.png';
+
+* css-loader
+import './styles.css'
+
+====
+```
+ babel-loader passes loaded JS file to @babel/core
+ @babel/core is the actual transcompiler which tries to convert latest version of JS to downward compatabile version like ES5
+
+  @babel/core uses @babel/preset-env
+
+  @babel/preset-env is a smart preset that allows you to use the latest JavaScript without needing to micromanage which syntax transforms (and optionally, browser polyfills) are needed by your target environment(s).
+
+Syntax transform:
+  
+let mobiles = filter(products, product => product.category === 'mobile');
+
+change to:
+
+let mobiles = filter(products, function(product) {
+    return product.category === 'mobile'
+});
+
+polyfills:
+A polyfill is a piece of code (usually JavaScript on the Web) used to provide modern functionality on older browsers that do not natively support it.
+
+Promise is a ES6/ES2015 feature --> not available in ES5 engine
+https://github.com/zloirock/core-js
+
+```
