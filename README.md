@@ -247,3 +247,12 @@ npm install
 require('lodash'); --> check if its a part of pre-defined NodeJs module, else see it in "node_modules" folder
 
  node ./src/index.js 
+
+ ============
+
+ HOF: 
+ 1) functions which can accept function as argument
+ 2) functions which can return a function
+
+ https://rxmarbles.com/
+ 

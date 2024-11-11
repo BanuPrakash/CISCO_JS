@@ -6,7 +6,20 @@ function multiply(x,y) {
     return x * y;
 }
 
+// OCP --> Open for extension, closed for modification
+function filter(elems, predicate) {
+    let results = [];
+    for (let i = 0; i < elems.length; i++) {
+        if (predicate(elems[i])) {
+            results.push(elems[i]);
+        }
+    }
+    return results;
+}
+
+
 // CommonJS module
 module.exports = {
-    add
+    add,
+    filter
 }
