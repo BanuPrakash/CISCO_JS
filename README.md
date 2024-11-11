@@ -235,9 +235,15 @@ node package managers:
 * run scripts
 
 npm i lodash
-
+```
  "lodash": "4.17.21" --> exact version
  "lodash": "^4.17.21" --> 4+
  "lodash": "~4.17.21" --> major version has to be 4, minor and patch can change
 
- 
+other team members:
+npm install
+```
+
+require('lodash'); --> check if its a part of pre-defined NodeJs module, else see it in "node_modules" folder
+
+ node ./src/index.js 
