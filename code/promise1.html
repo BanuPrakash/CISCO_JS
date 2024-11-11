@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function getUsers() {
+            return new Promise(function (resolve, reject) {
+                setTimeout(function () {
+                    // SC 200
+                    resolve("Users List!!!")
+                    // SC 404
+                    //reject("Users not found!!!");
+                }, 2000);
+            });
+        }
+
+        // synchronous code
+        // let users = getUsers();
+
+        getUsers().then(function success(data) {
+            console.log(data);
+        },
+            function failure(err) {
+                console.log("Boom :-(", err)
+            });
+
+        console.log("Bye!!"); // non blocking
+
+    </script>
+</body>
+
+</html>
