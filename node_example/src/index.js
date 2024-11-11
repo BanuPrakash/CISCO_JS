@@ -1,4 +1,4 @@
-const { random } = require('lodash'); //import random from 'lodash';
+const { random, map } = require('lodash'); //import random from 'lodash';
 const { add, filter } = require('./lib.js');
 console.log(add(1, 2)); // 3
 console.log(random(100));
@@ -36,3 +36,26 @@ let mobiles = filter(products, product => product.category === 'mobile');
 mobiles.forEach(function (product) {
     console.log(product.name);
 });
+
+console.log('-------------------');
+
+// product to string
+let names = map(products, product => product.name);
+names.forEach(name => console.log(name));
+
+function toCard(product) {
+    return `
+        <div class="card">
+            <h2>${product.name}</h2>
+            <p>${product.price}</p>
+        </div>
+    `
+}
+
+// product to DOM card element
+let cards = map(products, toCard);
+
+// using pre-defined map from array
+// let cards = products.map(toCard);
+
+cards.forEach(card => console.log(card));

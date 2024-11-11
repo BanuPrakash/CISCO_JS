@@ -255,4 +255,10 @@ require('lodash'); --> check if its a part of pre-defined NodeJs module, else se
  2) functions which can return a function
 
  https://rxmarbles.com/
- 
+
+ filter -> subset
+ map --> transform
+ reduce --> aggergate
+ forEach --> traverse and perform action on each item
+
+ all the above functions are already pre-defined in "array" object in JS

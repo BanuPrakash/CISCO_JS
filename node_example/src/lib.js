@@ -17,9 +17,17 @@ function filter(elems, predicate) {
     return results;
 }
 
+function map(elems, transformFn) {
+    let results = [];
+    for (let i = 0; i < elems.length; i++) {
+            results.push(transformFn(elems[i]));
+    }
+    return results;
+}
 
 // CommonJS module
 module.exports = {
     add,
-    filter
+    filter, 
+    map
 }
