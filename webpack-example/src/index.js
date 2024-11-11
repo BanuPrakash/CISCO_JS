@@ -1,6 +1,8 @@
 import filter, {add, map} from './lib'; // ESM 
 import Person from './Person' 
 
+Promise.resolve('Hello, World');
+
 let p = new Person('Vinod', 48);
 console.log(p.getName());
 console.log(p.getAge());
