@@ -363,3 +363,22 @@ orphan modules 835 bytes [orphan] 2 modules
 ./src/index.js + 2 modules 1.6 KiB [built] [code generated]
 webpack 5.96.1 compiled successfully in 149 ms
 ```
+useful in development stage:
+The HtmlWebpackPlugin simplifies creation of HTML files to serve your webpack bundles. This is especially useful for webpack bundles that include a hash in the filename which changes every compilation.
+```
+<script src="bundle.js"></script>
+```
+In projects there could be many bundles.
+In development stage bundle.js could be cached by browser
+
+webpack-dev-server: miniature web server good enough for development stage.
+React / Angular 
+
+By default it runs on 8080 port
+npm i webpack-dev-server
+
+"start": "webpack serve --mode development",
+
+npm start
+
+=======
