@@ -262,3 +262,19 @@ require('lodash'); --> check if its a part of pre-defined NodeJs module, else se
  forEach --> traverse and perform action on each item
 
  all the above functions are already pre-defined in "array" object in JS
+
+ ===
+ Webpack and React concept using Webpack without using react library
+
+HOF type 2: functions which return a function
+
+function adder(base) {
+    return function(arg) {
+        return base + arg;
+    }
+}
+
+let fiveAdder = adder(5);
+fiveAdder(2); // 5 + 2
+
+closure: function returned from outer function can access all the members of outer function
