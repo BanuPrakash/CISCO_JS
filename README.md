@@ -606,3 +606,57 @@ https://jsonplaceholder.typicode.com/users
 ====
 
 Whenever state changes component re-renders resulting in all the children components to re-render
+
+==================================
+
+React 16.8 version onwards: functional components should be preferred over class components.
+
+class  components: state and life cycle methods
+
+React 16.8 version --> hooks was introduced to be used in functional components to create components to achieve what class components can do.
+all hooks starts with "use"
+
+1) useState()
+is a hook to introduce state in functional component
+2) useEffect()
+is similar to life cycle methods of class components
+```
+    // same as componentDidMount
+    // get called after first render
+    useEffect(() => {
+
+    },[]);
+
+    // same as componentDidUpdate
+    useEffect(() => {
+
+    });
+
+    // same as componentDidUpdate but gets called only when age change
+    // get called after first render
+    useEffect(() => {
+
+    },[age]);
+
+    // same as componentWillUnmount
+    // doTask gets called before component unmounts
+      useEffect(() => {
+
+        return () => doTask();
+    },[]);
+
+```
+3) useReducer()
+4) useContext()
+5) useCallback()
+6) useMemo()
+7) useDeffered()
+8) useParams()
+...
+
+bootstrap is a CSS Framework
+npm i bootstrap
+
+import 'bootstrap/dist/css/bootstrap.min.css'
+
+<img src="..." class="col-sm-12 col-md-6 col-lg-4">
