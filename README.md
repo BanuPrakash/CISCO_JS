@@ -599,5 +599,10 @@ http://server.com/users/3
 Unmounting: componentWillUnmount() --> place where unsubscription happens
 display a popup dialog box...
 
+https://opentdb.com/api.php?amount=10
 
 https://jsonplaceholder.typicode.com/users
+
+====
+
+Whenever state changes component re-renders resulting in all the children components to re-render
