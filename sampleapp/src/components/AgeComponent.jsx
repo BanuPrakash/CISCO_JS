@@ -40,6 +40,15 @@ function AgeComponent(props) {
 
 */
 // memo() is a HOC like HOF
-const MemoAgeComponent = memo(AgeComponent);
+// const MemoAgeComponent = memo(AgeComponent);
 
+function doCheck(oldProps, newProps) {
+    console.log(oldProps, newProps);
+    if (oldProps.age === newProps.age) {
+        return true;
+    }
+    return false;
+}
+
+const MemoAgeComponent = memo(AgeComponent, doCheck);
 export default MemoAgeComponent;
