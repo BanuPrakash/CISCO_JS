@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import CustomerRow from './CustomerRow';
+import Filter from './Filter';
 
 export default class CustomerList extends Component {
     x = 10; // state but not handled by react, no reconciliation
@@ -19,6 +20,20 @@ export default class CustomerList extends Component {
         ]
     }
 
+    // lifecycle method
+    componentDidMount() {
+        // prestine 
+        // customers is what is displayed
+        this.state.original = this.state.customers; // make a copy of customers
+    }
+
+    filterCustomers(txt) {
+        let custs = this.state.original.filter(c => (c.lastName.toUpperCase().indexOf(txt.toUpperCase()) >= 0 ))
+        this.setState({
+            customers: custs
+        });
+    }
+    
     deleteCustomer(id) {
         let custs = this.state.customers.filter(c => c.id !== id);
         // don't do this, this doesn't trigger reconcillation 
@@ -35,6 +50,7 @@ export default class CustomerList extends Component {
     render() {
         return (
             <div>
+                <Filter filterEvt={(txt) => this.filterCustomers(txt) }/>
                 {
                     this.state.customers.map(customer => <CustomerRow
                         delEvt={(id) => this.deleteCustomer(id)}
