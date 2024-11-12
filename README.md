@@ -520,4 +520,32 @@ function add(x, y) {
 add(4,5); // undefined
 ```
 
-Resume @ 11:15
+Reconciliation:
+whenever state changes react needs to re-render the components with the new state.
+
+VDOM: virtual DOM [ output of React.createElement()] --> tree of potential DOM elements
+
+```
+const diffs = [
+    {
+        newNode: {/* new version of list item third */},
+        index: 2
+    },
+    {
+        newNode: {/*  new version of list item SEC */ },
+        oldNode: { /* original version of list item second */},
+        index: 1
+    }
+]
+
+const domElement = document.querySelector("ul");
+diffs.forEach(diff => {
+    const newElement = document.createElement(diff.newNode.tagName);
+
+    if(diff.oldNode) {
+        domelement.replaceChild(diff.newNode, diff.index);
+    } else {
+        domelement.appendChild(diff.newNode);
+    }
+})
+```

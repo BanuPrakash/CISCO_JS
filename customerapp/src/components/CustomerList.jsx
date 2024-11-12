@@ -18,12 +18,26 @@ export default class CustomerList extends Component {
             { id: 10, firstName: 'Wanda', lastName: 'Maximoff' }
         ]
     }
+
+    deleteCustomer(id) {
+        let custs = this.state.customers.filter(c => c.id !== id);
+        // don't do this, this doesn't trigger reconcillation 
+        // this.state.customers = custs;
+
+        // triggers diff algorithm and reconcillation
+        // way to update the state
+         this.setState({
+             customers: custs
+         });
+    }
+
     // return JSX
     render() {
         return (
             <div>
                 {
                     this.state.customers.map(customer => <CustomerRow
+                        delEvt={(id) => this.deleteCustomer(id)}
                         key={customer.id}
                         customer={customer} />)
                 }
