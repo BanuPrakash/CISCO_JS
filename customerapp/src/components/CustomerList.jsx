@@ -18,14 +18,17 @@ export default class CustomerList extends Component {
             { id: 10, firstName: 'Wanda', lastName: 'Maximoff' }
         ]
     }
+    // return JSX
     render() {
         return (
             <div>
                 {
-                    this.state.customers.map(customer => <CustomerRow  
-                        customer={customer}/>)
+                    this.state.customers.map(customer => <CustomerRow
+                        key={customer.id}
+                        customer={customer} />)
                 }
             </div>
-        )
+        );
+
     }
 }

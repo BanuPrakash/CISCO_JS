@@ -506,4 +506,18 @@ default entry point for webpack is "src/index.js"
 
 html-webpack-plugin creates a bundle and adds script in public/index.html
 
+```
+function add(x, y) {
+    return x + y;
+}
 
+add(4,5); // 9
+
+function add(x, y) {
+    return 
+        x + y;
+}
+add(4,5); // undefined
+```
+
+Resume @ 11:15
