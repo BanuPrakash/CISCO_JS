@@ -398,3 +398,112 @@ module.exports = {
 ```
 
 {product.name} is called as interpolation {data to presentation}
+-----------------------
+
+Day 1 Recap:
+
+HOF: high order functions
+1) functions which accept function as argument
+2) function which returns a function --> closure
+
+NodeJs: 
+```
+platform with V8 JS engine and libuv C/C++ library for async , event loop
+
+nodeJs project: package.json [where scripts and dependencies are configured]
+node_modules folder: place where 3rd party dependencies are downloaded into.
+```
+
+webpack development tool:
+```
+* webpack and webpack-cli to use the tool
+webpack --mode development
+webpack --mode production
+--> bundle.js
+
+* babel-loader --> webpack.config.js
+whenever we are importing JS files babel-loader loads the file gives it to
+@babel/core --> transcompiler to convert higher version of code to lower compatable version for target.
+@babel/preset-env: syntax transforms and polyfill
+
+* html-webpack-plugin: automate adding script tags in html to include the bundle.
+```
+
+Day 2:
+React application development
+
+JSX: JavaScript and XML is not understood by JS engine
+step 1:
+JSX has to be converted into JS object
+@babel/preset-react looks for React object and createElement() method of the object
+
+step 2:
+JS object has to be rendered to the target platform [web / mobile / tv / desktop]
+varies render's are available
+
+React Components:
+Thinking in React:
+1) Atoms: basic building blocks such as button, input, image ...
+    Most of the time we use 3rd party libraries like react-bootstrap, MUI, adobe spectrum
+    to get them.
+    Some times we just use low level DOM
+2) molecule: grouping of atoms such as Card, panel, ...
+many pre-defined molecules are already available with 3rd party libraries
+
+3) Organisms: combining molecules like list of cards, navigation bar
+4) Templates: grouping of organisms
+5) Pages
+
+-----------
+
+Building React Components:
+use react and react-dom libraries
+1) React.createElement() low level API to convert JSX to JS
+2) functional component: function which returns JSX [99% of components]
+3) class component: render() method returns JSX
+
+======================================
+
+class component:
+1) extends React.Component [inheritance]
+2) can have state and behaviour
+3) must have render() method to return  JSX
+
+React version 18 --> needs minimum of NodeJS version 20
+
+Customer application
+* customers state
+* delete a customer based on ID
+* filter customers based on name
+
+npx lodash [ doesn't make any sense]
+
+executable modules --> npx
+
+
+npx create-react-app customerapp
+
+
+create-react-app: creates a scaffolding code with "webpack"
+
+```
+https://www.jhipster.tech/configuring-a-corporate-proxy/
+npm config set proxy http://username:password@host:port
+npm config set https-proxy http://username:password@host:port
+```
+Commands:
+```
+ "build": "react-scripts build", is similar to
+
+ "build":" webpack --mode production"
+
+"start": "react-scripts start", is same as
+"start" : "webpack serve --mode development" --> uses webpack-dev-server on port 3000
+
+```
+
+default entry point for webpack is "src/index.js"
+
+html-webpack-plugin creates a bundle and adds script in public/index.html
+
+
