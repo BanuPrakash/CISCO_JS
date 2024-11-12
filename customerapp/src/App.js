@@ -2,10 +2,12 @@ import logo from './logo.svg'; // file-loader
 import './App.css';
 import CustomerList from './components/CustomerList';
 import ParentComponent from './dummy/ParentComponent';
+import UserList from './lifecycle/UserList';
 
 function App() {
   return <div className="App">
-       <CustomerList /> 
+    <UserList />
+       {/* <CustomerList />  */}
       {/* <ParentComponent /> */}
     </div>
 }

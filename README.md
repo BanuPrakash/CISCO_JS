@@ -549,3 +549,55 @@ diffs.forEach(diff => {
     }
 })
 ```
+
+Complete the MCQ task
+1) npx create-react-app mcqapp
+2) create QuestionList.jsx --> class component
+has state --> questions ==> take it from questions.txt --> github
+use map for every question --> <Question props..../>
+3) create Question.jsx
+cans use functional component
+
+check task.pdf for output
+
+======================================
+
+onXXXX(); onClick(), onChange(), onKeyPress(), onMouseMove(), onMouseHover() ...
+
+    Class Component Life Cycle
+
+Mouting Phase: 
+```
+constructor() --> render() --> componentDidMount()
+
+constructor() we can do initialization with default data
+render() --> return JSX --> JS --> DOM UI will have default DOM rendered
+componentDidMount() --> place where API calls has to happen, based on the result of API call update the state. When state  gets updated --> Updating Phase
+
+Never make API calls in constructor() --> reason --> render() can't be called until constrctor() is completed. this leads to FCP Core Web Vital --> First Contentful Paint
+
+youtube --> best example of how they have handled FCP issues
+```
+
+Updating Phase:
+whenever state changes
+```
+shouldComponentUpdate() --> true --> render() --> componentDidUpdate()
+shouldComponentUpdate() --> false
+
+componentDidUpdate(): API calls on dependend data
+
+Assume: 
+componentDidMount()  gets all users
+http://server.com/users
+
+when we hover over each user --> need to get complete details of that user [componentDidUpdate()]
+http://server.com/users/3
+
+```
+
+Unmounting: componentWillUnmount() --> place where unsubscription happens
+display a popup dialog box...
+
+
+https://jsonplaceholder.typicode.com/users

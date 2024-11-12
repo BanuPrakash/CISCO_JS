@@ -19,7 +19,10 @@ export default class CustomerList extends Component {
             { id: 10, firstName: 'Wanda', lastName: 'Maximoff' }
         ]
     }
-
+    constructor(props) {
+        super(props);
+    }
+    
     // lifecycle method
     componentDidMount() {
         // prestine 
@@ -42,7 +45,8 @@ export default class CustomerList extends Component {
         // triggers diff algorithm and reconcillation
         // way to update the state
          this.setState({
-             customers: custs
+             customers: custs,
+             original: custs
          });
     }
 
