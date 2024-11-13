@@ -770,3 +770,39 @@ Differnet actions leads to different way of mutating the state
 ```
 
 perform INCREMENT, DECREMENT and REST operation count
+
+===================
+
+```
+function SomeComponent() {
+    function doTask() {
+
+    }
+
+    function doAnotherTask(no){
+
+    }
+
+    return <div>
+        <button type="button" onClick={doTask}> one </button>
+         <button type="button" onClick={() => doAnotherTask(10)}> second </button>
+          // BELOW code is WRONG, gets called before click, when component is rendered
+          <button type="button" onClick={doTask()}> one </button>
+    </div>
+}
+
+```
+
+React Context [React 16 version]: Context provides a way to pass data through the component tree without having to pass props down manually at every level.
+
+<UserContextProvider>
+    <A/>
+    <B/>
+</UserContextProvider>
+
+
+<UserContextProvider>
+    <C/>
+    <D/>
+    <E />
+</UserContextProvider>

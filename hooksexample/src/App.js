@@ -5,13 +5,15 @@ import UserList from './hookscode/UserList';
 import UserDetails from './hookscode/UserDetails';
 import { useState } from 'react';
 import Counter from './hookscode/Counter';
+import First from './context/First';
 
 function App() {
   // let [uid, setUid] = useState(1);
   // console.log(UserList(setUid));
   return (
     <div className="App">
-      <Counter />
+      <First />
+      {/* <Counter /> */}
       {/* <StateExample />
       <div className='row'>
         <div className='col-md-8'>
