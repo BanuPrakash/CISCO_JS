@@ -627,7 +627,8 @@ is similar to life cycle methods of class components
 
     },[]);
 
-    // same as componentDidUpdate
+    // same as componentDidUpdate; rarely used
+    // gets called whenever any state, props change
     useEffect(() => {
 
     });
@@ -637,6 +638,10 @@ is similar to life cycle methods of class components
     useEffect(() => {
 
     },[age]);
+
+     useEffect(() => {
+
+    },[name]);
 
     // same as componentWillUnmount
     // doTask gets called before component unmounts
@@ -659,4 +664,109 @@ npm i bootstrap
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-<img src="..." class="col-sm-12 col-md-6 col-lg-4">
+SPA with only functional components:
+1) useReducer
+2) useContext
+3) useState
+4) useEffect
+5) react-router-dom
+6) React Context
+7) react-bootstrap
+8) fontawesome
+9) useParams
+
+================
+
+Day 2 Recap:
+
+1) class component : state and behaviour, extends Component
+there is a special member "state", every state has to be a key in that.
+state = {
+    "name": "Tim",
+    "age" : 35
+}
+
+Because React considers only these members for reconcilliation; meaning changes done to these members only will lead to
+re-rendering. state change has to be done only using this.setState();
+* render() method returns JSX
+* JSX --> JS by React.createElement()
+* returned JS value of React.createElement() can be passed to various renderes like react-dom [web], react-native[mobile], react-tv[WebOS, smartOS]
+
+2) functional component:
+Initially functional component were meant only for view component, not supposed to have logic
+
+3) React 16.8 version they introduced hooks
+Hooks are meant to provide functionalites to functional components what is available in class component
+like state, life cycle methods.
+
+useState() and useEffect() hooks covered so far.
+
+==================================
+
+Day 3:
+
+Setting PORT number, by default webpack-dev-server for react runs on port 3000
+
+1) "start": "export PORT=1234 && react-scripts start"
+
+2) "start": "set PORT=1234 && react-scripts start"
+
+3) Best way is set it in ".env" file
+
+root folder:
+```
+.env
+PORT=1222
+```
+Production code can be deployed on differed web servers like apache / IIS/ NginX ...
+
+npm run build ==> creates a build folder which can be taken to any target server
+
+=============================================
+
+3) useReducer() hook
+this hook has to be used instead of useState() if
+a) conditionally mutate the state
+b) state mutation depends on previous state
+c) state is complex
+
+let [age, setAge] = useState(18);
+setAge(100);
+
+Example:
+state is :
+{
+    cartItems: [],
+    total: 0,
+    quantity: 0 
+}
+
+Differnet actions leads to different way of mutating the state
+1) add to cart; take the previous state , add new item into cartItems, cal total, increment qty
+2) remove from cart; take the previous state; remove item from cartItems, cal total, decrement qty
+3) clear cart
+
+* reducer function 
+(state, action) ==> returns new state
+
+* action objects
+```
+{
+    type: 'ADD_TO_CART'
+    payload: {id:1, name: "P1", price: 100, qty: 1}
+}
+{
+    type: 'INCREMENT'
+    payload: 1
+}
+{
+    type: 'REMOVE_FROM_CART'
+    payload: 1
+}
+
+{
+    type: 'CLEAR_CART'
+}
+```
+
+perform INCREMENT, DECREMENT and REST operation count

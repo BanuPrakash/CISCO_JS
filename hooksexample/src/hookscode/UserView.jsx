@@ -20,6 +20,10 @@ import React from 'react'
 //   }
 
 
+let data = "test"; // global variable, can lead to data corruption
+// internally attaches this to "window"
+// window.data
+
 export default function UserView({user, changeUid}) {
     let {id, name, email} = user; //destructuring
     return (
