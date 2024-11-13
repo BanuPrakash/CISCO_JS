@@ -25,7 +25,7 @@ export default function ProductCard({ product }) {
                         description,
                         price,
                         quantity: 1,
-                        amount: price
+                        amount: price 
                     })}>Add to Cart</Button>
                 </Card.Footer>
             </Card>

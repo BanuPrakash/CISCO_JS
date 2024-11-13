@@ -869,6 +869,11 @@ and create Productlist and ProductCard components
 ```
 let nos = [1,2,4,7,8];
 
+let total = nos.reduce( (v1, v2) => {
+    console.log(v1, v2);
+    return v1 + v2
+    }, 0.0);
+
 let res = [...nos]; // copied nos into res
 
 let res = [...nos, 6]; //copy nos and add 6
