@@ -853,4 +853,11 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 Step 5: 
 update NavbarComponent
 
+===
+Problem:
+placing all components in bundle.js leads to FCP; until this bundle is not downloaded to browser we have blank screen
 
+Solution: load only required components thro bundle.js initially --> EAGER
+load other components lazily only of required
+
+====================
