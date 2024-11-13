@@ -886,3 +886,25 @@ json-server: Get a full fake REST API with zero coding in less than 30 seconds
 
 npx json-server --watch data.json --port 1234
 
+
+
+String literals:
+
+let name = "Roger";
+let name = 'Roger'; 
+
+Template String
+
+let data = `
+    Welcome ${name} to React Training,
+    Virtual Bengalure
+`
+
+==================
+
+Controlled and Uncontrolled Components:
+Controlled components
+React manages the state of controlled components, which are tightly coupled with React's state management.
+
+Uncontrolled components
+Uncontrolled components manage their state internally and rely on the DOM for handling interactions. 
