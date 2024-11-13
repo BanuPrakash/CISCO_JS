@@ -795,6 +795,7 @@ function SomeComponent() {
 
 React Context [React 16 version]: Context provides a way to pass data through the component tree without having to pass props down manually at every level.
 
+```
 <UserContextProvider>
     <A/>
     <B/>
@@ -806,3 +807,5 @@ React Context [React 16 version]: Context provides a way to pass data through th
     <D/>
     <E />
 </UserContextProvider>
+
+```
