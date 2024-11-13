@@ -866,3 +866,13 @@ Step 6:
 Make api call using axios to https://fakestoreapi.com/products?limit=5
 and create Productlist and ProductCard components
 
+```
+let nos = [1,2,4,7,8];
+
+let res = [...nos]; // copied nos into res
+
+let res = [...nos, 6]; //copy nos and add 6
+res ==> 1, 2, 4, 7, 8, 6
+```
+
+

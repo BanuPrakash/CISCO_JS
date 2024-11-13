@@ -3,18 +3,19 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 export default function ProductCard({ product }) {
+    let {id, image, title, description, price} = product;
     return (
         <div className='col-md-4'>
             <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={product.image} />
+                <Card.Img variant="top" src={image} />
                 <Card.Body>
-                    <Card.Title>{product.title}</Card.Title>
+                    <Card.Title>{title}</Card.Title>
                     <Card.Text>
-                        {product.description}
+                        {description}
                     </Card.Text>
                 </Card.Body>
                 <Card.Footer>
-                    Rs. {product.price} &nbsp;
+                    Rs. {price} &nbsp;
                     <Button variant="primary">Add to Cart</Button>
                 </Card.Footer>
             </Card>
