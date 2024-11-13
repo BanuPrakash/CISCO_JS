@@ -861,3 +861,8 @@ Solution: load only required components thro bundle.js initially --> EAGER
 load other components lazily only of required
 
 ====================
+
+Step 6:
+Make api call using axios to https://fakestoreapi.com/products?limit=5
+and create Productlist and ProductCard components
+
