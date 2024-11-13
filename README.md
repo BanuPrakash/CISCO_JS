@@ -880,4 +880,9 @@ let res = [...nos, 6]; //copy nos and add 6
 res ==> 1, 2, 4, 7, 8, 6
 ```
 
+checkout ==> API call to post the data to server and store; redirect to home page
+
+json-server: Get a full fake REST API with zero coding in less than 30 seconds 
+
+npx json-server --watch data.json --port 1234
 
