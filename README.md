@@ -908,3 +908,22 @@ React manages the state of controlled components, which are tightly coupled with
 
 Uncontrolled components
 Uncontrolled components manage their state internally and rely on the DOM for handling interactions. 
+
+==========================
+
+Upto React 17 rendering  was Stack Architecture
+React 18 onwards rendering became Fiber Architecture
+
+https://claudiopro.github.io/react-fiber-vs-stack-demo/
+
+```
+function Counter() {
+    let [count, setCount] = useState(0);
+    return <div>
+        <h1>Counter example</h1>
+        <p> Count {count} </p>
+        <button onClick={() => setCount(count+1)}> + </button>
+    </div>
+}
+
+```
