@@ -813,6 +813,7 @@ SPA: index.html
 
 React Router DOM: client side routing
 different URLs should display different components
+```
 http://localhost:3000/ ==> landing page
 http://localhost:3000/products ==> ProductList
 http://localhost:3000/cart ==> cart
@@ -820,6 +821,7 @@ http://localhost:3000/details/4 ==> Details of Product with id 4
 http://localhost:3000/new_product ==> ProductForm
 http://localhost:3000/sdfvmdsf ==> Default Page
 
+```
 
 Step 1:
 npx create-react-app shopapp
