@@ -809,3 +809,46 @@ React Context [React 16 version]: Context provides a way to pass data through th
 </UserContextProvider>
 
 ```
+SPA: index.html
+
+React Router DOM: client side routing
+different URLs should display different components
+http://localhost:3000/ ==> landing page
+http://localhost:3000/products ==> ProductList
+http://localhost:3000/cart ==> cart
+http://localhost:3000/details/4 ==> Details of Product with id 4
+http://localhost:3000/new_product ==> ProductForm
+http://localhost:3000/sdfvmdsf ==> Default Page
+
+
+Step 1:
+npx create-react-app shopapp
+
+cd shopapp
+npm i bootstrap react-bootstrap react-router-dom axios
+
+axios instead of fetch for API call
+axios is better for CRUD opertions
+
+==========
+
+Step 2:
+create ProductList, Cart, Details, ProductForm and Default components
+
+Step 3:
+3rd party react components:
+KendoUI
+PrimeReact
+MUI
+react-bootstrap
+adobe spectrum
+
+
+Step 4:
+include bootstrap css in index.js
+import 'bootstrap/dist/css/bootstrap.min.css'
+
+Step 5: 
+update NavbarComponent
+
+
