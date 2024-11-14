@@ -981,3 +981,46 @@ in extracted folder> npm start
 useSelector: The selector is approximately equivalent to the mapStateToProps argument to connect conceptually.
 
 useDispatch: The selector is approximately equivalent to the mapDispatchToProps argument to connect conceptually.
+
+=========================================
+
+ReduxToolkit --> Simplify using Redux
+
+* createSlice() --> one place where we write reducer functions for every action
+* configureStore() instead of createStore() --> no need for explictly writing combineReducers() for creating root reducer, devtool is configured by default.
+* useSelector() --> hook instead of mapStateToProps and connect()
+* useDispatch() --> hook instead of mapDispatchToProps and connect()
+
+=======
+
+RTK Query: advanced data fetching and caching tool. also do pre-fetching
+
+Avoid <div> pollution
+
+```
+function Sample() {
+    return <div>
+        <h1>Hello</h1>
+        <p> World!!!</p>
+    </div>
+}
+```
+
+Alternatively:
+```
+function Sample() {
+    return <React.Fragment>
+        <h1>Hello</h1>
+        <p> World!!!</p>
+    </React.Fragment>
+}
+```
+OR:
+```
+function Sample() {
+    return <>
+        <h1>Hello</h1>
+        <p> World!!!</p>
+    </>
+}
+```
