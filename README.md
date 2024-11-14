@@ -927,3 +927,8 @@ function Counter() {
 }
 
 ```
+
+opens index.html in default web browser
+
+
+

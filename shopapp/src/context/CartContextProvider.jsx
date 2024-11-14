@@ -13,7 +13,9 @@ let initialState = {
 
 export default function CartContextProvider({ children }) {
     let navigate = useNavigate(); // hook
+
     let [state, dispatch] = useReducer(cartReducer, initialState);
+    
     function addToCart(item) {
         dispatch({ type: 'ADD_TO_CART', payload: item });
     }
