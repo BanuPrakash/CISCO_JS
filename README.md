@@ -927,8 +927,31 @@ function Counter() {
 }
 
 ```
+https://www.youtube.com/watch?v=8pDqJVdNa44
 
-opens index.html in default web browser
+
+Predicatable State Management libraries
+* using Context for State management is an anti-pattern
+* Initially it was MVC pattern --> Model View Controller used for state management
+* Flux Architecture: Unidirectional flow keeping in sync with React
+* Redux
+* Mobx
+* ObservableRx
+* Recoil
+
+
+Why Redux?
+1) state management module can be developed independently; team need not know any front end technologies
+2) once module is developed it can be integrated with any frontend [React, Angular, Backbone, Vue] or backend libraries [ExpressJS, nestJS, nextJS, ...]
+3) Time Travel debugging; can replay entire events and see when state got polluted
+4) good for MicroFrontend
+
+======
+
+npx create-react-app contacts-manager
+
+contacts-manager % npm i redux react-redux
+
 
 
 
