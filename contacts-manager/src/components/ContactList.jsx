@@ -5,7 +5,7 @@ export default function ContactList(props) {
   return (
     <div>
         {
-        props.list && props.list.map(contact => <ContactView contact={contact}/>)
+        props.list && props.list.map(contact => <ContactView contact={contact} removeContact={props.removeContact}/>)
     }
     </div>
   )
