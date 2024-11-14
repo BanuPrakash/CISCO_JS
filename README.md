@@ -953,5 +953,13 @@ npx create-react-app contacts-manager
 contacts-manager % npm i redux react-redux
 
 
+state in store
 
+{
+    "profile": {
+        "avatar":"sample.png",
+         "name": "banuprakash"
+    },
+    "contacts": []
+}
 
