@@ -952,14 +952,21 @@ npx create-react-app contacts-manager
 
 contacts-manager % npm i redux react-redux
 
+===========
 
-state in store
+Redux --> RTK Redux toolkit
+The official, opinionated, batteries-included toolset for efficient Redux development
 
-{
-    "profile": {
-        "avatar":"sample.png",
-         "name": "banuprakash"
-    },
-    "contacts": []
-}
+We don't need to write connect, mapStateToProps, mapDispatchToProps
 
+========
+
+Convert our shopapp to use RTK instead of Context
+1) delete all references of Context in application
+2) delete context folder
+3) delete reducers folder
+4) in index.js remove CartContextProvider references
+5) remove ref in ProductCard, Navbarcomponent, Cart and CartList
+
+6) npm install @reduxjs/toolkit react-redux
+7) npx json-server --watch data.json --port 1234
