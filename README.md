@@ -970,3 +970,14 @@ Convert our shopapp to use RTK instead of Context
 
 6) npm install @reduxjs/toolkit react-redux
 7) npx json-server --watch data.json --port 1234
+
+Download shopapp-rtk.zip [without Context usage]
+extract
+in extracted folder>npm install @reduxjs/toolkit react-redux
+
+in extracted folder> npx json-server --watch data.json --port 1234
+in extracted folder> npm start
+
+useSelector: The selector is approximately equivalent to the mapStateToProps argument to connect conceptually.
+
+useDispatch: The selector is approximately equivalent to the mapDispatchToProps argument to connect conceptually.
